@@ -3,23 +3,28 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GammaPlatformApi", "GammaPlatformApi\GammaPlatformApi.csproj", "{D6FB6178-5897-4A75-B02A-7EFC42579DC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GammaPlatformApi", "GammaPlatformApi\GammaPlatformApi.csproj", "{D6FB6178-5897-4A75-B02A-7EFC42579DC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamma.Data.Entities", "Gamma.Data.Entities\Gamma.Data.Entities.csproj", "{D2B003BE-78F4-4220-8C91-9ED05E390E5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamma.Data.Entities", "Gamma.Data.Entities\Gamma.Data.Entities.csproj", "{D2B003BE-78F4-4220-8C91-9ED05E390E5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamma.Logic.Repositories", "Gamma.Logic.Repositories\Gamma.Logic.Repositories.csproj", "{E50DE73E-49BF-47D4-9131-8E52B9836481}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamma.Logic.Repositories", "Gamma.Logic.Repositories\Gamma.Logic.Repositories.csproj", "{E50DE73E-49BF-47D4-9131-8E52B9836481}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamma.Logic.Services", "Gamma.Logic.Services\Gamma.Logic.Services.csproj", "{85F91632-7E98-4574-9EC8-061AC3FFB2DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamma.Logic.Services", "Gamma.Logic.Services\Gamma.Logic.Services.csproj", "{85F91632-7E98-4574-9EC8-061AC3FFB2DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamma.Data.EF", "Gamma.Data.Migrations\Gamma.Data.EF.csproj", "{B7502896-FF20-40B9-8F00-BE831A35F573}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamma.Data.EF", "Gamma.Data.Migrations\Gamma.Data.EF.csproj", "{B7502896-FF20-40B9-8F00-BE831A35F573}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamma.Utils", "Gamma.Utils\Gamma.Utils.csproj", "{5304639E-21E1-4E4F-8C3A-E7EF173D5289}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamma.Utils", "Gamma.Utils\Gamma.Utils.csproj", "{5304639E-21E1-4E4F-8C3A-E7EF173D5289}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamma.Logic.Models", "Gamma.Logic.Models\Gamma.Logic.Models.csproj", "{FC20EF76-5F3A-4438-8265-A4A18E14EA14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamma.Logic.Models", "Gamma.Logic.Models\Gamma.Logic.Models.csproj", "{FC20EF76-5F3A-4438-8265-A4A18E14EA14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamma.Data.Common", "Gamma.Data.Common\Gamma.Data.Common.csproj", "{DD3DB601-ED4F-4BF6-B8D2-DCBA21ACF222}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamma.Data.Common", "Gamma.Data.Common\Gamma.Data.Common.csproj", "{DD3DB601-ED4F-4BF6-B8D2-DCBA21ACF222}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gamma.Data.Configurations", "Gamma.Data.Configurations\Gamma.Data.Configurations.csproj", "{E7F7C6F6-6215-4B9A-A903-46EC56FDFF22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gamma.Data.Configurations", "Gamma.Data.Configurations\Gamma.Data.Configurations.csproj", "{E7F7C6F6-6215-4B9A-A903-46EC56FDFF22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B9E6C5F3-81A2-4548-B1D6-FA8F534CCA67}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

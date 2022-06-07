@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gamma.Logic.Models\Gamma.Logic.Models.csproj" />
+    <ProjectReference Include="..\Gamma.Logic.Repositories\Gamma.Logic.Repositories.csproj" />
+    <ProjectReference Include="..\Gamma.Utils\Gamma.Utils.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -10,6 +10,11 @@ namespace Gamma.Data.EF
         private readonly IConfiguration _configuration;
 
         public DbSet<User> Users { get; set; } = null!;
+        public DbSet<Domain> Domains { get; set; } = null!;
+        public DbSet<Site> Sites { get; set; } = null!;
+        public DbSet<SitePage> SitePages { get; set; } = null!;
+        public DbSet<MediaResource> MediaResources { get; set; } = null!;
+        public DbSet<MediaResourceRevision> MediaResourceRevisions { get; set; } = null!;
 
         public GammaDbContext(IConfiguration configuration)
         {
@@ -24,6 +29,11 @@ namespace Gamma.Data.EF
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             new UserConfiguration().Configure(modelBuilder.Entity<User>());
+            new DomainConfiguration().Configure(modelBuilder.Entity<Domain>());
+            new SiteConfiguration().Configure(modelBuilder.Entity<Site>());
+            new SitePageConfiguration().Configure(modelBuilder.Entity<SitePage>());
+            new MediaResourceConfiguration().Configure(modelBuilder.Entity<MediaResource>());
+            new MediaResourceRevisionConfiguration().Configure(modelBuilder.Entity<MediaResourceRevision>());
         }
     }
 }

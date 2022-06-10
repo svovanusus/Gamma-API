@@ -8,6 +8,11 @@ namespace Gamma.Logic.Repositories
         public static void Setup(IServiceCollection services)
         {
             services.AddScoped<IUserRepository, UserRepositoryImpl>();
+            services.AddScoped<IDomainRepository, DomainRepositoryImpl>();
+            services.AddScoped<IMediaResourceRepository, MediaResourceRepositoryImpl>();
+            services.AddScoped<IMediaResourceRevisionRepository, MediaResourceRevisionRepositoryImpl>();
+            services.AddScoped<ISitePageRepository, SitePageRepositoryImpl>();
+            services.AddScoped<ISiteRepository, SiteRepositoryImpl>();
         }
     }
 }

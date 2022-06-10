@@ -1,9 +1,8 @@
-﻿using Gamma.Logic.Services;
+﻿using Gamma.Logic.Models;
+using Gamma.Logic.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace GammaPlatformApi.Controllers
 {
@@ -13,50 +12,61 @@ namespace GammaPlatformApi.Controllers
     public class SitesController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly ISitesService _sitesService;
 
-        public SitesController(IUserService userService)
+        public SitesController(IUserService userService, ISitesService sitesService)
         {
             _userService = userService;
+            _sitesService = sitesService;
         }
 
-        // GET: api/<SitesController>
+        // GET api/<SitesController>
         [HttpGet]
-        public async Task<IEnumerable<string>> Get()
+        public async Task<SiteListItemModel[]> Get()
         {
             if (long.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out var userId))
             {
-                var user = await _userService.GetUser(userId);
-                if (user != null)
-                {
-                    return new string[] { user.FirstName, user.LastName };
-                }
+                return await _sitesService.GetUserSites(userId);
             }
-            return new string[] { "value1", "value2" };
+
+            Response.StatusCode = StatusCodes.Status404NotFound;
+            return null!;
         }
 
         // GET api/<SitesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public async Task<CreateSiteRequestModel?> Get(int id)
         {
-            return "value";
+            if (long.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out var userId))
+            {
+                var site = await _sitesService.GetSite(id, userId);
+                if (site != null)
+                {
+                    Response.StatusCode = StatusCodes.Status200OK;
+                    return site;
+                }
+            }
+
+            Response.StatusCode = StatusCodes.Status404NotFound;
+            return null;
         }
 
         // POST api/<SitesController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task Post([FromBody] CreateSiteRequestModel model)
         {
-        }
+            if (long.TryParse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value, out var userId))
+            {
+                var newSite = await _sitesService.CreateSite(model, userId);
+                if (newSite != null)
+                {
+                    Response.StatusCode = StatusCodes.Status201Created;
+                    return;
+                }
+            }
 
-        // PUT api/<SitesController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<SitesController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            Response.StatusCode = StatusCodes.Status400BadRequest;
+            return;
         }
     }
 }

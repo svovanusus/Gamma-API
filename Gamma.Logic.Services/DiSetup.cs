@@ -9,6 +9,7 @@ namespace Gamma.Logic.Services
         {
             services.AddTransient<IAuthService, AuthServiceImpl>();
             services.AddTransient<IUserService, UserServiceImpl>();
+            services.AddTransient<ISitesService, SitesServiceImpl>();
         }
     }
 }
